@@ -4,7 +4,7 @@ import Particles from './Particles';
 import Orb from './Orb';
 import RotatingText from './RotatingText';
 import TextType from './TextType';
-
+import profilePic from '../assets/profilePic.png';
 const Hero = () => {
     return (
         <section id="home" className="min-h-screen flex items-center bg-[#000000] relative overflow-hidden lg:pt-10">
@@ -125,7 +125,7 @@ const Hero = () => {
                             {/* Image Container */}
                             <div className="relative w-full h-full rounded-full overflow-hidden flex items-end justify-center pointer-events-none">
                                 <img
-                                    src="src/assets/profilePic.png"
+                                    src={profilePic}
                                     alt="James Ryen"
                                     className="w-[115%] h-auto object-cover translate-y-4 transform shadow-2xl"
                                 />
