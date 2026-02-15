@@ -1,13 +1,14 @@
 
-import { Code, Coffee, Users, Award } from 'lucide-react';
+import { Code, Coffee, Users, Award,    AwardIcon } from 'lucide-react';
 import aboutImg from '../assets/aboutstanding.png';
 
 const About = () => {
     const stats = [
-        { icon: Code, label: 'Projects Completed', value: '10+' },
-        { icon: Coffee, label: 'Cups of Coffee', value: '500+' },
-        { icon: Users, label: 'Happy Clients', value: '5+' },
-        { icon: Award, label: 'Years Experience', value: '1.6+' }
+
+        { icon: Award, label: 'Years Experience', value: '1.6+' },
+        { icon: AwardIcon, label: 'Certifications', value: 'Python' },
+        { icon: AwardIcon, label: 'Published Apps (Play Store)', value: '2' },
+        { icon: AwardIcon, label: 'Published Apps (App Store)', value: '1' },
     ];
 
     return (

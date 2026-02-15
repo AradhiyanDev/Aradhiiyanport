@@ -153,7 +153,8 @@ Source code is available on GitHub.`,
                             <div
                                 key={project.id}
                                 onClick={() => handleProjectClick(project)}
-                                className="group bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:transform hover:scale-105 cursor-pointer"
+                                className="group bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 cursor-pointer will-change-auto"
+                                style={{ transform: 'translateZ(0)' }}
                             >
                                 <div className="relative overflow-hidden">
                                     <img

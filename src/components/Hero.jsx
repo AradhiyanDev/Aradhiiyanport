@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight, Play, Linkedin } from 'lucide-react';
 import Particles from './Particles';
 import Orb from './Orb';
 import RotatingText from './RotatingText';
@@ -86,6 +86,19 @@ const Hero = () => {
                                     transition={{ type: "spring", damping: 30, stiffness: 400 }}
                                     rotationInterval={2000}
                                 />
+                            </div>
+
+                            {/* LinkedIn Button */}
+                            <div className="flex justify-center lg:justify-start pt-6">
+                                <a
+                                    href="https://www.linkedin.com/in/arunkumar-m008"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-2 px-6 py-3 bg-[#0077b5] hover:bg-[#006399] text-white rounded-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                                >
+                                    <Linkedin size={20} />
+                                    <span>Connect on LinkedIn</span>
+                                </a>
                             </div>
                         </div>
 

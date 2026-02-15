@@ -1,41 +1,69 @@
 import React from 'react';
+import { Code2, Smartphone, Database, Server, GitBranch, Wrench } from 'lucide-react';
 
 const Skills = () => {
     const skillCategories = [
         {
-            title: 'Frontend',
-            skills: [
-                { name: 'React', level: 95 },
-                { name: 'TypeScript', level: 90 },
-                { name: 'Next.js', level: 85 },
-                { name: 'Tailwind CSS', level: 92 },
-                { name: 'JavaScript', level: 95 },
-                { name: 'HTML/CSS', level: 98 }
-            ]
+            title: 'Mobile Development',
+            icon: Smartphone,
+            color: 'purple',
+            skills: ['Flutter', 'React Native', 'BLoC Architecture', 'Deep Linking']
         },
         {
-            title: 'Backend',
-            skills: [
-                { name: 'Node.js', level: 88 },
-                { name: 'Express.js', level: 85 },
-                { name: 'PostgreSQL', level: 80 },
-                { name: 'MongoDB', level: 78 },
-                { name: 'REST APIs', level: 90 },
-                { name: 'GraphQL', level: 75 }
-            ]
+            title: 'Frontend Development',
+            icon: Code2,
+            color: 'blue',
+            skills: ['React.js', 'JavaScript','HTML/CSS', 'Tailwind CSS']
         },
         {
-            title: 'Tools & Others',
-            skills: [
-                { name: 'Git', level: 95 },
-                { name: 'Docker', level: 70 },
-                { name: 'AWS', level: 75 },
-                { name: 'Figma', level: 85 },
-                { name: 'Jest', level: 80 },
-                { name: 'Webpack', level: 78 }
-            ]
+            title: 'Backend Development',
+            icon: Server,
+            color: 'green',
+            skills: ['Node.js', 'Express.js', 'REST APIs', 'Python', 'API Integration']
+        },
+        {
+            title: 'Database',
+            icon: Database,
+            color: 'orange',
+            skills: ['PostgreSQL', 'Firebase']
+        },
+        {
+            title: 'Tools & DevOps',
+            icon: Wrench,
+            color: 'pink',
+            skills: ['Android Studio', 'Xcode', 'CI/CD']
+        },
+        {
+            title: 'Version Control',
+            icon: GitBranch,
+            color: 'indigo',
+            skills: ['Git', 'GitHub','Play Store', 'App Store']
         }
     ];
+
+    const getColorClasses = (color) => {
+        const colors = {
+            purple: 'from-purple-500/20 to-purple-600/20 border-purple-500/30 group-hover:border-purple-500',
+            blue: 'from-blue-500/20 to-blue-600/20 border-blue-500/30 group-hover:border-blue-500',
+            green: 'from-green-500/20 to-green-600/20 border-green-500/30 group-hover:border-green-500',
+            orange: 'from-orange-500/20 to-orange-600/20 border-orange-500/30 group-hover:border-orange-500',
+            pink: 'from-pink-500/20 to-pink-600/20 border-pink-500/30 group-hover:border-pink-500',
+            indigo: 'from-indigo-500/20 to-indigo-600/20 border-indigo-500/30 group-hover:border-indigo-500'
+        };
+        return colors[color] || colors.purple;
+    };
+
+    const getIconColorClass = (color) => {
+        const colors = {
+            purple: 'text-purple-400',
+            blue: 'text-blue-400',
+            green: 'text-green-400',
+            orange: 'text-orange-400',
+            pink: 'text-pink-400',
+            indigo: 'text-indigo-400'
+        };
+        return colors[color] || colors.purple;
+    };
 
     return (
         <section id="skills" className="py-20 bg-gray-800/50">
@@ -45,58 +73,41 @@ const Skills = () => {
                         My <span className="text-purple-500">Skills</span>
                     </h2>
                     <p className="text-gray-400 text-xl max-w-2xl mx-auto">
-                        Here are the technologies and tools I work with to bring ideas to life.
+                        Technologies and tools I use to build production-ready applications.
                     </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {skillCategories.map((category, index) => (
-                        <div
-                            key={index}
-                            className="bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-shadow duration-300"
-                        >
-                            <h3 className="text-2xl font-bold text-white mb-6 text-center">
-                                {category.title}
-                            </h3>
-
-                            <div className="space-y-4">
-                                {category.skills.map((skill, skillIndex) => (
-                                    <div key={skillIndex} className="space-y-2">
-                                        <div className="flex justify-between items-center">
-                                            <span className="text-gray-300 font-medium">{skill.name}</span>
-                                            <span className="text-purple-400 text-sm">{skill.level}%</span>
-                                        </div>
-
-                                        <div className="w-full bg-gray-700 rounded-full h-2">
-                                            <div
-                                                className="bg-gradient-to-r from-purple-500 to-purple-600 h-2 rounded-full transition-all duration-1000 ease-out"
-                                                style={{ width: `${skill.level}%` }}
-                                            ></div>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    ))}
-                </div>
-
-                {/* Additional Technologies */}
-                <div className="mt-16 text-center">
-                    <h3 className="text-2xl font-bold text-white mb-8">Other Technologies</h3>
-                    <div className="flex flex-wrap justify-center gap-4">
-                        {[
-                            'Redux', 'Zustand', 'Framer Motion', 'Three.js', 'D3.js',
-                            'Socket.io', 'Prisma', 'Supabase', 'Firebase', 'Vercel',
-                            'Netlify', 'Stripe', 'Auth0', 'Cypress', 'Storybook'
-                        ].map((tech, index) => (
-                            <span
+                    {skillCategories.map((category, index) => {
+                        const Icon = category.icon;
+                        return (
+                            <div
                                 key={index}
-                                className="px-4 py-2 bg-gray-700 text-gray-300 rounded-lg hover:bg-purple-500 hover:text-white transition-all duration-300 cursor-default"
+                                className={`group bg-gradient-to-br ${getColorClasses(category.color)} border rounded-xl p-6 transition-all duration-300 hover:shadow-xl`}
+                                style={{ transform: 'translateZ(0)' }}
                             >
-                                {tech}
-                            </span>
-                        ))}
-                    </div>
+                                <div className="flex items-center gap-3 mb-5">
+                                    <div className={`${getIconColorClass(category.color)}`}>
+                                        <Icon size={28} strokeWidth={2} />
+                                    </div>
+                                    <h3 className="text-xl font-bold text-white">
+                                        {category.title}
+                                    </h3>
+                                </div>
+
+                                <div className="flex flex-wrap gap-2">
+                                    {category.skills.map((skill, skillIndex) => (
+                                        <span
+                                            key={skillIndex}
+                                            className="px-4 py-2 bg-gray-800/80 text-gray-200 rounded-lg text-sm font-medium hover:bg-gray-700 transition-colors duration-200 border border-gray-700"
+                                        >
+                                            {skill}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
         </section>
@@ -104,3 +115,4 @@ const Skills = () => {
 };
 
 export default Skills;
+

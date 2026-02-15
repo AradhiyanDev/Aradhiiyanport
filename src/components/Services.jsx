@@ -1,109 +1,143 @@
 import React from 'react';
-import { Code, Smartphone, Globe, Palette, Database, Zap } from 'lucide-react';
+import { Briefcase, Calendar, MapPin } from 'lucide-react';
 
-const Services = () => {
-    const services = [
+const Experience = () => {
+    const experiences = [
         {
-            icon: Code,
-            title: 'Web Development',
-            description: 'Full-stack web development with modern frameworks and technologies. From concept to deployment, I build scalable and maintainable applications.',
-            features: ['React/Next.js', 'Node.js APIs', 'Database Design', 'Performance Optimization']
+            id: 1,
+            title: 'Software Engineer – Mobile Applications',
+            company: 'Vealthx',
+            location: 'Bengalaru,Karnataka',
+            period: 'August 2025 – Present',
+            type: 'Full-time',
+            current: true,
+            responsibilities: [
+                'Leading mobile application development using Flutter and BLoC architecture',
+                'Architecting scalable fintech solutions with secure data management',
+                'Implementing subscription systems and DigiLocker integration',
+                'Managing end-to-end app store deployment and lifecycle',
+                'Optimizing application performance and navigation flows'
+            ],
+            technologies: ['Flutter', 'BLoC', 'Node.js', 'PostgreSQL', 'DigiLocker API']
         },
         {
-            icon: Smartphone,
-            title: 'Mobile Development',
-            description: 'Cross-platform mobile applications using React Native. Creating native-like experiences for both iOS and Android platforms.',
-            features: ['React Native', 'Native Modules', 'App Store Deployment', 'Push Notifications']
+            id: 2,
+            title: 'Mobile App Developer',
+            company: 'DSM Soft Pvt Ltd',
+            location: 'Tiruchirappalli,Tamil Nadu',
+            period: 'August 2024 – August 2025',
+            type: 'Full-time',
+            current: false,
+            responsibilities: [
+                'Developed and maintained Flutter and React Native applications',
+                'Built SR Portal field service management app from scratch',
+                'Enhanced FMS Lite fleet monitoring system with UI redesign',
+                'Integrated Node.js backend APIs and real-time features',
+                'Managed Play Store and App Store deployments'
+            ],
+            technologies: ['Flutter', 'React Native', 'Node.js', 'Firebase', 'REST APIs']
         },
         {
-            icon: Globe,
-            title: 'Single Page Applications',
-            description: 'Fast, interactive SPAs with smooth user experiences. Utilizing modern state management and routing solutions.',
-            features: ['React Router', 'State Management', 'Code Splitting', 'Progressive Web Apps']
-        },
-        {
-            icon: Palette,
-            title: 'UI/UX Design',
-            description: 'User-centered design approach to create intuitive and visually appealing interfaces that users love to interact with.',
-            features: ['Wireframing', 'Prototyping', 'User Research', 'Design Systems']
-        },
-        {
-            icon: Database,
-            title: 'Backend Development',
-            description: 'Robust server-side solutions with scalable architectures. Database design, API development, and cloud integration.',
-            features: ['RESTful APIs', 'GraphQL', 'Database Optimization', 'Cloud Services']
-        },
-        {
-            icon: Zap,
-            title: 'Performance Optimization',
-            description: 'Improving application performance through code optimization, caching strategies, and modern development practices.',
-            features: ['Code Splitting', 'Lazy Loading', 'Caching', 'Bundle Optimization']
+            id: 3,
+            title: 'App Developer Intern',
+            company: 'Zop Technologies',
+            location: 'Tiruvannamalai ,Tamil Nadu',
+            period: 'January 2024 – July 2024',
+            type: 'Internship',
+            current: false,
+            responsibilities: [
+                'Assisted in mobile application development projects',
+                'Learned Flutter and React Native frameworks',
+                'Contributed to UI/UX implementation and bug fixes',
+                'Collaborated with senior developers on feature development',
+                'Gained hands-on experience with version control and deployment'
+            ],
+            technologies: ['Flutter', 'React Native', 'Git', 'Firebase']
         }
     ];
 
     return (
-        <section id="services" className="py-20">
+        <section id="experience" className="py-20 bg-gray-800/50">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-                        My <span className="text-purple-500">Services</span>
+                        Work <span className="text-purple-500">Experience</span>
                     </h2>
                     <p className="text-gray-400 text-xl max-w-2xl mx-auto">
-                        I offer a comprehensive range of services to help bring your digital ideas to life.
+                        My professional journey in mobile application development.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {services.map((service, index) => (
-                        <div
-                            key={index}
-                            className="group bg-gray-800 rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:transform hover:scale-105 border border-gray-700 hover:border-purple-500"
-                        >
-                            <div className="flex items-center justify-center w-16 h-16 bg-purple-500/20 rounded-xl mb-6 group-hover:bg-purple-500/30 transition-colors duration-300">
-                                <service.icon className="w-8 h-8 text-purple-400" />
+                <div className="max-w-4xl mx-auto">
+                    {/* Timeline */}
+                    <div className="relative">
+                        {/* Timeline line */}
+                        <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 via-purple-600 to-transparent hidden md:block"></div>
+
+                        {experiences.map((exp, index) => (
+                            <div key={exp.id} className="relative mb-12 last:mb-0">
+                                {/* Timeline dot */}
+                                <div className="absolute left-8 top-8 w-4 h-4 bg-purple-500 rounded-full border-4 border-gray-900 hidden md:block transform -translate-x-1.5">
+                                    {exp.current && (
+                                        <span className="absolute inset-0 rounded-full bg-purple-500 animate-ping"></span>
+                                    )}
+                                </div>
+
+                                {/* Content card */}
+                                <div className="md:ml-20 bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-700 hover:border-purple-500">
+                                    {/* Header */}
+                                    <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                                        <div className="flex-1">
+                                            <div className="flex items-center gap-2 mb-2">
+                                                <h3 className="text-xl font-bold text-white">
+                                                    {exp.title}
+                                                </h3>
+                                                {exp.current && (
+                                                    <span className="px-3 py-1 bg-green-500/20 text-green-400 text-xs rounded-full font-medium border border-green-500/30">
+                                                        Current
+                                                    </span>
+                                                )}
+                                            </div>
+                                            <div className="flex items-center gap-2 text-purple-400 font-medium mb-2">
+                                                <Briefcase size={16} />
+                                                <span>{exp.company}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Meta info */}
+                                    <div className="flex flex-wrap gap-4 mb-4 text-sm text-gray-400">
+                                        <div className="flex items-center gap-1.5">
+                                            <Calendar size={14} />
+                                            <span>{exp.period}</span>
+                                        </div>
+                                        <div className="flex items-center gap-1.5">
+                                            <MapPin size={14} />
+                                            <span>{exp.location}</span>
+                                        </div>
+                                        <div className="px-2 py-0.5 bg-gray-700 rounded text-xs">
+                                            {exp.type}
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-
-                            <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-purple-400 transition-colors duration-300">
-                                {service.title}
-                            </h3>
-
-                            <p className="text-gray-400 leading-relaxed mb-6">
-                                {service.description}
-                            </p>
-
-                            <ul className="space-y-2">
-                                {service.features.map((feature, featureIndex) => (
-                                    <li
-                                        key={featureIndex}
-                                        className="flex items-center text-sm text-gray-300"
-                                    >
-                                        <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3"></div>
-                                        {feature}
-                                    </li>
-                                ))}
-                            </ul>
-
-                            <div className="mt-6 pt-6 border-t border-gray-700">
-                                <button className="text-purple-400 hover:text-purple-300 font-medium text-sm transition-colors duration-300">
-                                    Learn More →
-                                </button>
-                            </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
 
-                {/* Call to Action */}
-                <div className="text-center mt-16">
-                    <div className="bg-gradient-to-r from-purple-600 to-purple-700 rounded-2xl p-8 shadow-2xl">
-                        <h3 className="text-3xl font-bold text-white mb-4">
-                            Ready to Start Your Project?
-                        </h3>
-                        <p className="text-purple-100 mb-6 max-w-xl mx-auto">
-                            Let's discuss your ideas and bring them to life with modern web technologies.
-                        </p>
-                        <button className="bg-white text-purple-600 px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors duration-300 shadow-lg">
-                            Get In Touch
-                        </button>
+                {/* Summary Stats */}
+                <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                    <div className="bg-gradient-to-br from-purple-500/20 to-purple-600/20 border border-purple-500/30 rounded-xl p-6 text-center">
+                        <div className="text-3xl font-bold text-white mb-2">2+</div>
+                        <div className="text-gray-400 text-sm">Years of Experience</div>
+                    </div>
+                    <div className="bg-gradient-to-br from-blue-500/20 to-blue-600/20 border border-blue-500/30 rounded-xl p-6 text-center">
+                        <div className="text-3xl font-bold text-white mb-2">3+</div>
+                        <div className="text-gray-400 text-sm">Projects Delivered</div>
+                    </div>
+                    <div className="bg-gradient-to-br from-green-500/20 to-green-600/20 border border-green-500/30 rounded-xl p-6 text-center">
+                        <div className="text-3xl font-bold text-white mb-2">3</div>
+                        <div className="text-gray-400 text-sm">Companies Worked</div>
                     </div>
                 </div>
             </div>
@@ -111,4 +145,5 @@ const Services = () => {
     );
 };
 
-export default Services;
+export default Experience;
+
