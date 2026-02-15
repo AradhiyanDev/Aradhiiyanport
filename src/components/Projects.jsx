@@ -1,13 +1,73 @@
 import React, { useState } from 'react';
 import { ExternalLink, Github, Smartphone } from 'lucide-react';
 import ProjectDetail from './ProjectDetail';
-
+import srPortal from '../assets/srportal.png';
+import fmslite from '../assets/fmslite.png'
+import vealthx from '../assets/vealthx.png'
 const Projects = () => {
     const [selectedProject, setSelectedProject] = useState(null);
 
     const projects = [
         {
             id: 1,
+            title: 'VEALTHX',
+            professionalTitle: 'VEALTHX – Fintech Wealth Management Application',
+            company: 'Vealthx',
+            appStoreUrl: 'https://apps.apple.com/in/app/vealthx/id6751635878',
+            playStoreUrl: 'https://play.google.com/store/apps/details?id=com.vealthx.apps&hl=en_IN',
+            shortSummary: 'Led end-to-end development of a fintech Flutter application including scalable architecture implementation using BLoC pattern, subscription system integration, DigiLocker backend integration, and full app store lifecycle management.',
+            detailedDescription: `VEALTHX is a fintech mobile application designed for secure wealth management and financial services integration.
+
+I was responsible for architecting the application from scratch using BLoC architecture, designing scalable and maintainable state management structure, developing and integrating Node.js backend subscription system, implementing DigiLocker backend integration, managing callbacks, deep links, and GoRouter navigation, and handling end-to-end Play Store and App Store registration and deployment.
+
+The project followed a production-grade architecture with clean separation of layers and maintainable codebase practices.`,
+            image: vealthx,
+            techStack: ['Flutter', 'BLoC Architecture', 'Node.js', 'PostgreSQL', 'Deep Linking', 'GoRouter', 'DigiLocker API'],
+            keyContributions: [
+                'Designed project foundation architecture',
+                'Built modular feature-based structure',
+                'Implemented subscription billing system',
+                'Integrated DigiLocker backend',
+                'Managed store publishing and update cycles',
+                'Optimized performance and navigation flows'
+            ],
+            impact: [
+                'Delivered production-grade fintech application',
+                'Implemented secure financial data management',
+                'Established scalable architecture for future growth'
+            ],
+            screenshots: []
+        },
+        {
+            id: 2,
+            title: 'FMS Lite Traccia',
+            professionalTitle: 'FMS Lite – Fleet Monitoring System Mobile Application',
+            company: 'DSM Soft Pvt Ltd',
+            shortSummary: 'Contributed to the enhancement, UI redesign, feature upgrades, and production maintenance of a cross-platform fleet monitoring application built using React Native.',
+            detailedDescription: `FMS Lite is a fleet management mobile application designed to monitor and manage vehicle tracking operations. The app provides real-time tracking insights, alerts, and fleet performance analytics.
+
+I worked on feature enhancements, UI/UX redesign, performance improvements, and continuous maintenance for both Android and iOS platforms. I also handled version upgrades and managed Play Store and App Store deployments.`,
+            image: fmslite,
+            techStack: ['React Native', 'Node.js', 'REST APIs', 'Play Store', 'App Store'],
+            keyContributions: [
+                'UI redesign and modern layout improvements',
+                'Added new feature enhancements',
+                'Maintained compatibility with latest OS versions',
+                'Managed production releases and updates',
+                'Resolved critical production issues'
+            ],
+            impact: [
+                'Enhanced user experience with modern UI',
+                'Improved app performance and stability',
+                'Maintained cross-platform compatibility'
+            ],
+            playStoreUrl: 'https://play.google.com/store/apps/details?id=com.dsmsoft.FMSLitev1&hl=en_IN',
+            appStoreUrl: 'https://apps.apple.com/in/app/fmslite-traccia/id6472259424',
+            screenshots: []
+        },
+
+        {
+            id: 3,
             title: 'SR Portal',
             professionalTitle: 'SR Portal – Field Service Management Mobile Application',
             company: 'DSM Soft Pvt Ltd',
@@ -19,7 +79,7 @@ The application streamlines on-site service operations including device installa
 I developed the application completely from scratch, handling the full lifecycle from architecture design, UI implementation, backend API integration, to Play Store production deployment and post-launch maintenance.
 
 The app is actively used by field technicians to improve efficiency, reduce manual paperwork, and ensure accurate service reporting.`,
-            image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800',
+            image: srPortal,
             techStack: ['Flutter', 'Node.js', 'REST API', 'Firebase', 'Play Store'],
             keyContributions: [
                 'Designed complete application architecture',
@@ -37,60 +97,7 @@ The app is actively used by field technicians to improve efficiency, reduce manu
             playStoreUrl: 'https://play.google.com/store/apps/details?id=com.sr.srportal&hl=en_IN',
             screenshots: []
         },
-        {
-            id: 2,
-            title: 'FMS Lite',
-            professionalTitle: 'FMS Lite – Fleet Monitoring System Mobile Application',
-            company: 'DSM Soft Pvt Ltd',
-            shortSummary: 'Contributed to the enhancement, UI redesign, feature upgrades, and production maintenance of a cross-platform fleet monitoring application built using React Native.',
-            detailedDescription: `FMS Lite is a fleet management mobile application designed to monitor and manage vehicle tracking operations. The app provides real-time tracking insights, alerts, and fleet performance analytics.
 
-I worked on feature enhancements, UI/UX redesign, performance improvements, and continuous maintenance for both Android and iOS platforms. I also handled version upgrades and managed Play Store and App Store deployments.`,
-            image: 'https://images.pexels.com/photos/3184317/pexels-photo-3184317.jpeg?auto=compress&cs=tinysrgb&w=800',
-            techStack: ['React Native', 'Node.js', 'REST APIs', 'Play Store', 'App Store'],
-            keyContributions: [
-                'UI redesign and modern layout improvements',
-                'Added new feature enhancements',
-                'Maintained compatibility with latest OS versions',
-                'Managed production releases and updates',
-                'Resolved critical production issues'
-            ],
-            impact: [
-                'Enhanced user experience with modern UI',
-                'Improved app performance and stability',
-                'Maintained cross-platform compatibility'
-            ],
-            playStoreUrl: 'https://play.google.com/store/apps/details?id=com.dsmsoft.FMSLitev1&hl=en_IN',
-            screenshots: []
-        },
-        {
-            id: 3,
-            title: 'VEALTHX',
-            professionalTitle: 'VEALTHX – Fintech Wealth Management Application',
-            company: 'Vealthx',
-            shortSummary: 'Led end-to-end development of a fintech Flutter application including scalable architecture implementation using BLoC pattern, subscription system integration, DigiLocker backend integration, and full app store lifecycle management.',
-            detailedDescription: `VEALTHX is a fintech mobile application designed for secure wealth management and financial services integration.
-
-I was responsible for architecting the application from scratch using BLoC architecture, designing scalable and maintainable state management structure, developing and integrating Node.js backend subscription system, implementing DigiLocker backend integration, managing callbacks, deep links, and GoRouter navigation, and handling end-to-end Play Store and App Store registration and deployment.
-
-The project followed a production-grade architecture with clean separation of layers and maintainable codebase practices.`,
-            image: 'https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=800',
-            techStack: ['Flutter', 'BLoC Architecture', 'Node.js', 'PostgreSQL', 'Deep Linking', 'GoRouter', 'DigiLocker API'],
-            keyContributions: [
-                'Designed project foundation architecture',
-                'Built modular feature-based structure',
-                'Implemented subscription billing system',
-                'Integrated DigiLocker backend',
-                'Managed store publishing and update cycles',
-                'Optimized performance and navigation flows'
-            ],
-            impact: [
-                'Delivered production-grade fintech application',
-                'Implemented secure financial data management',
-                'Established scalable architecture for future growth'
-            ],
-            screenshots: []
-        },
         {
             id: 4,
             title: 'Business Directory App',
@@ -115,7 +122,7 @@ Source code is available on GitHub.`,
                 'Enabled real-time content management',
                 'Demonstrated full-stack development capabilities'
             ],
-            githubUrl: '#',
+            githubUrl: 'https://github.com/AradhiyanDev/business-directoy-app.git',
             screenshots: []
         }
     ];
@@ -141,7 +148,7 @@ Source code is available on GitHub.`,
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {projects.map((project) => (
                             <div
                                 key={project.id}
@@ -185,15 +192,50 @@ Source code is available on GitHub.`,
                                         )}
                                     </div>
 
-                                    <div className="flex items-center justify-between pt-4 border-t border-gray-700">
-                                        <span className="text-purple-400 text-sm font-medium">
+                                    <div className="pt-4 border-t border-gray-700 space-y-3">
+                                        <span className="text-purple-400 text-sm font-medium block">
                                             Click to view details →
                                         </span>
-                                        <div className="flex space-x-2">
-                                            {project.playStoreUrl && <Smartphone size={16} className="text-gray-400" />}
-                                            {project.githubUrl && <Github size={16} className="text-gray-400" />}
+                                        <div className="flex flex-wrap gap-2">
+                                            {project.playStoreUrl && (
+                                                <a
+                                                    href={project.playStoreUrl}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    onClick={(e) => e.stopPropagation()}
+                                                    className="flex items-center gap-1.5 px-3 py-1.5 bg-purple-600 hover:bg-purple-700 text-white text-xs rounded-lg transition-colors font-medium"
+                                                >
+                                                    <Smartphone size={14} />
+                                                    <span>Play Store</span>
+                                                </a>
+                                            )}
+                                            {project.appStoreUrl && (
+                                                <a
+                                                    href={project.appStoreUrl}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    onClick={(e) => e.stopPropagation()}
+                                                    className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-700 hover:bg-gray-600 text-white text-xs rounded-lg transition-colors font-medium"
+                                                >
+                                                    <Smartphone size={14} />
+                                                    <span>App Store</span>
+                                                </a>
+                                            )}
+                                            {project.githubUrl && (
+                                                <a
+                                                    href={project.githubUrl}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    onClick={(e) => e.stopPropagation()}
+                                                    className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-700 hover:bg-gray-600 text-white text-xs rounded-lg transition-colors font-medium"
+                                                >
+                                                    <Github size={14} />
+                                                    <span>GitHub</span>
+                                                </a>
+                                            )}
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         ))}
