@@ -59,7 +59,7 @@ const Hero = () => {
 
                             </h1>
                             <p className="text-xl lg:text-2xl text-gray-300 font-medium">
-                                1.6 + Years Experience
+                                1.10 months Experience
                             </p>
 
                             <div className="pt-4 pb-2">
