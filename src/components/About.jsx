@@ -32,7 +32,7 @@ const About = () => {
 
                             <div className="space-y-4 text-gray-300 leading-relaxed text-lg">
                                 <p>
-                                    I'm a <span className="text-white font-medium">Flutter Developer</span> with <span className="text-purple-400 font-semibold">1.6+ years</span> of experience building high-performance mobile applications.
+                                    I'm a <span className="text-white font-medium">Flutter Developer</span> with <span className="text-purple-400 font-semibold">2+ years</span> of experience building high-performance mobile applications.
                                     I've worked on real-world fintech products at <span className="text-white font-medium">DSM Soft</span> and <span className="text-white font-medium">Vealthx</span>, where I handled end-to-end app development — from UI design and state management to API integration, app publishing, and subscription systems.
                                 </p>
 
